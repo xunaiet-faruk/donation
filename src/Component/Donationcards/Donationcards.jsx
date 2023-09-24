@@ -15,7 +15,7 @@ const Donationcards = () => {
     },[])
 
     return (
-        <div className="grid lg:grid-cols-4 md:grid-cols-2  max-w-6xl mx-auto mt-20 gap-5">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2  max-w-screen-xl mx-auto mt-20 gap-5">
            
            {
 

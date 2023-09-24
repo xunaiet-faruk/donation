@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Donations = ({item}) => {
 
-    console.log(item)
+ 
     const {id, picture, category, card_bg_color, title } =item;
     return (
       <Link to={`donation-details/${id}`}>
