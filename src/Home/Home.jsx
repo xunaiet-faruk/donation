@@ -1,10 +1,17 @@
-import React from 'react';
-import Donationcards from '../Component/Donationcards/Donationcards';
+
+import Banner from "../Component/Banner/Banner";
+import Donationcards from "../Component/Donationcards/Donationcards";
+
 
 const Home = () => {
+
     return (
         <div>
-           <Donationcards></Donationcards>
+            
+            <Banner></Banner>
+           
+            <Donationcards></Donationcards>
+           
         </div>
     );
 };

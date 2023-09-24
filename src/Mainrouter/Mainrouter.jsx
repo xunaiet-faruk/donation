@@ -1,13 +1,12 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../Home/Navbar/Navbar";
-import Banner from "../Component/Banner/Banner";
+
 
 
 const Mainrouter = () => {
     return (
-        <div>
+        <div className="max-w-screen-2xl mx-auto">
             <Navbar></Navbar>
-           <Banner></Banner>
           <Outlet></Outlet>
         </div>
     );
