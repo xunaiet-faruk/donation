@@ -2,12 +2,14 @@ import { Link } from "react-router-dom";
 
 const Donations = ({item}) => {
 
- 
+
     const {id, picture, category, card_bg_color, title } =item;
+
+
     return (
       <Link to={`donation-details/${id}`}>
       
-            <div className="mb-5">
+            <div  className="mb-5">
 
                 <div className="card  bg-base-100">
                     <div className="rounded-md">

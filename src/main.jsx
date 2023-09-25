@@ -8,10 +8,11 @@ import {
 } from "react-router-dom";
 import Mainrouter from './Mainrouter/Mainrouter';
 import Home from './Home/Home';
-import Donation from './Component/Donation/Donation';
-import Statistics from './Component/Statistics/Statistics';
+
 import Eroor from './Home/Errorelemnt/Eroor';
 import Donationdetails from './Component/Donationcards/Donationdetails/Donationdetails';
+import Statics from './Component/Statistics/Statics';
+import Donation from './Donation/Donation';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -25,11 +26,12 @@ const router = createBrowserRouter([
       },
       {
         path:'/donation',
-        element:<Donation></Donation>
+        element:<Donation></Donation>,
+     
       },
       {
         path:'/statistics',
-        element:<Statistics></Statistics>
+        element:<Statics></Statics>
       },
       {
         path:'/donation-details/:id',
