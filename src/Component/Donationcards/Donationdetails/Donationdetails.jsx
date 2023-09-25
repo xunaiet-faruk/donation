@@ -4,21 +4,22 @@ import Singledetails from "./Singledetails";
 
 
 const Donationdetails = () => {
-    const [cards, setcards] = useState({});
+    const [cards, setCards] = useState({});
 
-    const single =useParams();  
+    const params=useParams();  
+   
    const donationdetails =useLoaderData();
- 
+    console.log(cards)
 
 
    useEffect(()=>{
 
 
-    const findid =donationdetails.find(card => card.id == single.id)
-    setcards(findid)
+    const findid =donationdetails?.find(card => card.id == params.id)
+    setCards(findid)
 
 
-   },[single.id, donationdetails])
+   },[params.id, donationdetails])
 
 
     return (

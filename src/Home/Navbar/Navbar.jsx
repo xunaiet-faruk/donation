@@ -3,9 +3,9 @@ const Navbar = () => {
     return (
         <div className='flex flex-wrap  justify-between font-semibold max-w-screen-xl mx-auto p-7'>
             <div>
-                <img className="lg:w-[230px] w-[200px]" src="https://i.ibb.co/PZ2TCCQ/exam-8.png" alt="" />
+                <img className="lg:w-[230px] w-[200px] ml-20" src="https://i.ibb.co/PZ2TCCQ/exam-8.png" alt="" />
             </div>
-            <ul className='flex  gap-12 pl-5 mt-4 text-[#0B0B0B]'>
+            <ul className='flex  gap-12 pl-5 text-xl mt-4 text-[#0B0B0B]'>
                 <li>
                     <NavLink
                         to="/"

@@ -1,27 +1,28 @@
-import React from 'react';
+
 import { Link } from 'react-router-dom';
 
-const Donationlocal = ({ donate}) => {
+const Donationlocal = ({ donation }) => {
 
-    const { picture, title, price, category } = donate;
+    const { picture, button_bg_color, title, price, text_color, category, card_bg_color } = donation;
+   
 
     return (
-        <div className='flex gap-5 items-center rounded-lg'>
+        <div  className='flex gap-5 items-center rounded-lg h-44' style={{backgroundColor:card_bg_color}}>
 
-            <div className='w-1/3'>
-                 <img src={picture} alt="" />
+            <div>
+                <img className='h-44' src={picture} alt="" />
             </div>
             <div className='w-2/3'>
-                <h2>{category}</h2>
-                <h1 className='text-2xl font-bold'>{title}</h1>
-                <p className='font-semibold'>{price} </p>
-<Link to='/'>
+                <h2 style={{ color: text_color, backgroundColor: card_bg_color }} className="w-20 rounded mb-3  text-center "> {category}</h2>
+                <p style={{ color: text_color }} className="text-xl  font-bold">{title}</p>
+                <p style={{color:text_color}} className='font-semibold pb-3'>${price} </p>
+                <Link to='/'>
 
-                    <button className='font-bold'>View Details</button>
-</Link>             
+                    <button style={{ backgroundColor: button_bg_color}} className='font-bold px-3 rounded-md py-1 text-white '>View Details</button>
+                </Link>
             </div>
 
-            
+
         </div>
     );
 };

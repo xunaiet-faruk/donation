@@ -1,40 +1,47 @@
 import React, { useEffect, useState } from 'react';
 import Donationlocal from '../Component/Donationcards/Donationdetails/Donationlocal';
+import { getData } from '../Component/Localstore/Localstore';
 import { useLoaderData } from 'react-router-dom';
 
+
 const Donation = () => {
-    const [donate , setdonate] =useState([]);
-    const [show, setshow] =useState(4);
+ 
+    const [storageD, setStorageD] = useState([])
+    const [showAll, setShowAll] = useState(false);
 
-    useEffect(()=>{
+    const founds = useLoaderData();
 
-        const dontaionItems =JSON.parse(localStorage.getItem('card'));
-        if(dontaionItems){
-            setdonate(dontaionItems);
+    useEffect(() => {
+        const storedId = getData();
+        if (founds.length > 0) {
+            const findDonate = founds.filter(found => storedId.includes(found.id))
+            setStorageD(findDonate)
+
         }
+    }, [founds])
 
-    },[])
 
     return (
-      <div className='max-w-screen-xl mx-auto my-16'>
-
-            <div className='grid lg:grid-cols-2 gap-5 '>
+     
+  <div className="max-w-screen-xl mx-auto my-20">
+            <div className="grid md:grid-cols-2 gap-6">
                 {
+                    showAll ? storageD.map(donation => <Donationlocal key={donation.id} donation={donation}></Donationlocal>)
+                        :
+                        storageD.slice(0, 4).map(donation => <Donationlocal key={donation.id} donation={donation}></Donationlocal>)
+                }
 
-                    donate.slice(0,show).map(donates => <Donationlocal key={donates.id} donate={donates}></Donationlocal>)
+            </div>
 
+            <div className={`flex justify-center mt-10 ${showAll ? 'hidden' : ''}`}>
+                {
+                    storageD.length > 4 && <button onClick={() => setShowAll(!showAll)} className="bg-[#009444] px-5 py-3 text-white rounded-lg">
+                        {showAll ? '' : 'See All'}
+                    </button>
                 }
             </div>
-            <div className={ donate.length > 4 ? '' : 'hidden'}>
-                <div className={show === donate.length && 'hidden'}>
-                <div className='text-center mt-8'>
-                
-                <button onClick={() =>setshow(donate.length)} className='bg-[#009444] px-5 py-3 text-white rounded-md'> Show All</button>
-                </div>
-                </div>
-            </div>
+        </div>
 
-      </div>
     );
 };
 

@@ -5,12 +5,12 @@ import Donations from "./Donations";
 
 const Donationcards = () => {
 
-    const [donets, setdonates] =useState([]);
+    const [donets, setDonates] =useState([]);
     useEffect(()=>{
 
-        fetch('donation.json')
+        fetch('../../../public/donation.json')
         .then(res => res.json())
-        .then(data => setdonates(data))
+        .then(data => setDonates(data))
 
     },[])
 
@@ -19,7 +19,7 @@ const Donationcards = () => {
            
            {
 
-donets.map(items =><Donations key={items.id} item={items}></Donations>)
+donets.map(items =><Donations key={items.id} items={items}></Donations>)
 
            }
         </div>
