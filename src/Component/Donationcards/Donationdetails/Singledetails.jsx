@@ -19,7 +19,6 @@ const Singledetails = ({ cards }) => {
     
     
     
-    
     }
 
   
@@ -33,7 +32,7 @@ const Singledetails = ({ cards }) => {
                 <div className='absolute bg-gray-500 mix-blend-multiply lg:px-[640px] md:px-[384px] px-[212px] py-12 -mt-24'>
                 </div>
                 <Link to={'/'}>
-                    <button onClick={handlebtn} className='absolute -mt-[68px] ml-5 bg-[#FF444A] text-[#FFFFFF] px-6 rounded-md py-3'>Donate ${price}</button>
+                    <button style={{backgroundColor:button_bg_color}} onClick={handlebtn} className='absolute -mt-[68px] ml-5  text-[#FFFFFF] px-6 rounded-md py-3'>Donate ${price}</button>
                 </Link>
             <div className='lg:text-left text-center'>
                     <h2 className='text-4xl mt-10  font-bold text-[#0B0B0B]'> {title}</h2>

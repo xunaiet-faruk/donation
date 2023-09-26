@@ -2,8 +2,8 @@ import { PieChart, Pie, Cell, ResponsiveContainer, Legend } from 'recharts';
 const PieChartStyle = ({donation ,totalDonation}) => {
 
     const data = [
-        { name: 'Total Donation', value: totalDonation },
-        { name: 'Your Donation', value: donation },
+      { name: 'Your Donation', value: donation },
+      { name: ' Total Donation', value: totalDonation },
       ];
       
   const COLORS = ['#FF444A', '#00C49F', '#FFBB28', '#FF8042'];
