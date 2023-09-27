@@ -1,20 +1,17 @@
 import { useEffect, useState } from "react";
 import PieChartStyle from "./PieChart";
-
 import { getData } from "../Localstore/Localstore";
 import { useLoaderData } from "react-router-dom";
-
-
 const Statistics = () => {
     const [donation,setDonation] = useState(0)
     const [totalDonation,setTotalDonation] = useState(0)
   const Piedata =useLoaderData();
 
     useEffect(()=>{
-        const getDaontionId =getData();
-        setDonation(getDaontionId.length);
-        const toTallDonation = Piedata.length - getDaontionId.length;
-        setTotalDonation(toTallDonation)
+        const getDonationId =getData();
+        setDonation(getDonationId.length);
+        const donationAll = Piedata.length - getDonationId.length;
+        setTotalDonation(donationAll)
     }, [Piedata])
 
    

@@ -1,9 +1,10 @@
+import PropTypes from 'prop-types'
 import { Link } from "react-router-dom";
 
 const Donations = ({ items }) => {
 
 
-    const { id, picture, category, card_bg_color, title, text_color, category_bg_color } =items;
+    const { id, picture, category, card_bg_color, title, text_color} =items;
 
 
 
@@ -32,5 +33,10 @@ const Donations = ({ items }) => {
       </Link>
     );
 };
+
+
+Donations.propTypes = {
+    items: PropTypes.object
+}
 
 export default Donations;

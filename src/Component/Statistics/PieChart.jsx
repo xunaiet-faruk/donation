@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import { PieChart, Pie, Cell, ResponsiveContainer, Legend } from 'recharts';
 const PieChartStyle = ({donation ,totalDonation}) => {
 
@@ -17,7 +18,7 @@ const PieChartStyle = ({donation ,totalDonation}) => {
     innerRadius,
     outerRadius,
     percent,
-    index,
+    
   }) => {
     const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
     const x = cx + radius * Math.cos(-midAngle * RADIAN);
@@ -32,7 +33,7 @@ const PieChartStyle = ({donation ,totalDonation}) => {
         dominantBaseline="central"
         fontSize='25px'
       >
-        {`${(percent * 100).toFixed(0)}%`}
+        {`${(percent * 100).toFixed(1)}%`}
       </text>
     );
   };
@@ -59,6 +60,11 @@ const PieChartStyle = ({donation ,totalDonation}) => {
     </ResponsiveContainer>
   );
 };
+
+PieChartStyle.propTypes = {
+  donation: PropTypes.object,
+  totalDonation: PropTypes.object,
+}
 
 export default PieChartStyle;
 

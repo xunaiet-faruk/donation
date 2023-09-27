@@ -1,10 +1,10 @@
-
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { setData } from '../../Localstore/Localstore';
 const Singledetails = ({ cards }) => {
    console.log(cards)
-    const { id, picture, title, category, category_bg_color, card_bg_color, text_color, button_bg_color, description, price } = cards;
+    const { id, picture, title, button_bg_color, description, price } = cards;
 
     const handlebtn = () => {
     
@@ -29,7 +29,7 @@ const Singledetails = ({ cards }) => {
                 <div className='relative'>
                     <img className=' w-full  md:h-[700px] h-[300px]' src={picture} alt="" />
                 </div>
-                <div className='absolute bg-gray-500 mix-blend-multiply lg:px-[640px] md:px-[384px] px-[212px] py-12 -mt-24'>
+                <div className='absolute bg-gray-400 mix-blend-multiply lg:px-[640px] md:px-[384px] px-[212px] py-12 -mt-24'>
                 </div>
                 <Link to={'/'}>
                     <button style={{backgroundColor:button_bg_color}} onClick={handlebtn} className='absolute -mt-[68px] ml-5  text-[#FFFFFF] px-6 rounded-md py-3'>Donate ${price}</button>
@@ -44,6 +44,8 @@ const Singledetails = ({ cards }) => {
         </div>
     );
 };
-
+Singledetails.propTypes = {
+    cards: PropTypes.object
+}
 
 export default Singledetails;

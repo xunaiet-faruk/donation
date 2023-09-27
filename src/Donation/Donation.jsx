@@ -3,14 +3,11 @@ import Donationlocal from '../Component/Donationcards/Donationdetails/Donationlo
 import { getData } from '../Component/Localstore/Localstore';
 import { useLoaderData } from 'react-router-dom';
 
-
 const Donation = () => {
  
     const [storageD, setStorageD] = useState([])
     const [showAll, setShowAll] = useState(false);
-
     const founds = useLoaderData();
-
     useEffect(() => {
         const storedId = getData();
         if (founds.length > 0) {
@@ -19,8 +16,6 @@ const Donation = () => {
 
         }
     }, [founds])
-
-
     return (
      
   <div className="max-w-screen-xl mx-auto my-20">
