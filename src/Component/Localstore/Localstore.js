@@ -8,8 +8,8 @@ const getData = () => {
 
 const setData = (id) => {
     const havaDonate = getData();
-    const isExist = havaDonate.find(oneDonate => oneDonate.id === id);
-    if (!isExist) {
+    const cards = havaDonate.find(oneDonate => oneDonate.id === id);
+    if (!cards) {
         havaDonate.push(id);
         localStorage.setItem('donation', JSON.stringify(havaDonate))
     }

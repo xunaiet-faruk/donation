@@ -1,5 +1,24 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { Authcontext } from "../../Component/Firebase/Context";
+
+
+
 const Navbar = () => {
+    const { logout,users } = useContext(Authcontext);
+    
+
+const handlebtn = () =>{
+    logout()
+    .then(res => {
+        console.log(res.user)
+    })
+    .catch(error =>{
+        console.log(error)
+    })
+    
+}
+
     return (
         <div className='flex flex-wrap  justify-between font-semibold max-w-screen-xl mx-auto p-7'>
             <div>
@@ -35,6 +54,23 @@ const Navbar = () => {
                     >
                         Statistics
                     </NavLink>
+                </li>
+                <li>
+                    <NavLink
+                        to="/login"
+                        className={({ isActive, isPending }) =>
+                            isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
+                        }
+                    >
+                    Login
+                    </NavLink>
+                </li>
+                <li>
+             {
+                        users?.email ? <button onClick={handlebtn} className="btn btn-secondary">Sign out</button>
+                        :
+                        <button className="btn btn-secondary">Login</button>
+             }
                 </li>
             </ul>
         </div>

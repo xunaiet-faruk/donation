@@ -14,6 +14,10 @@ import Donationdetails from './Component/Donationcards/Donationdetails/Donationd
 
 import Donation from './Donation/Donation';
 import Statistics from './Component/Statistics/Statistics';
+import Login from './Login/Login';
+import Register from './Login/Register/Register';
+import Context from './Component/Firebase/Context';
+import Private from './Login/Private/Private';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -39,9 +43,17 @@ const router = createBrowserRouter([
       },
       {
         path:'/donation-details/:id',
-        element:<Donationdetails></Donationdetails>,
+        element: <Private><Donationdetails></Donationdetails></Private>,
         loader:() =>fetch('/donation.json')
    
+      },
+      {
+        path:'/login',
+        element:<Login></Login>
+      },
+      {
+        path:'/register',
+        element:<Register></Register>
       }
     ]
   },
@@ -49,6 +61,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+ <Context>
+      <RouterProvider router={router} />
+ </Context>
   </React.StrictMode>,
 )

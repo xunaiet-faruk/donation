@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import Singledetails from "./Singledetails";
-
+// jjjjjjjjjjjjjjjjj
 const Donationdetails = () => {
     const [cards, setCards] = useState({});
     const params = useParams();
